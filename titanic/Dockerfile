@@ -4,7 +4,12 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY Pipfile Pipfile.lock ./
+RUN apt-get update \
+   && apt-get install libgomp1
 
-RUN pip install pipenv \
- && pipenv install --system
+COPY poetry.lock pyproject.toml ./
+
+RUN pip install poetry
+
+RUN poetry config virtualenvs.create false \
+  && poetry install
