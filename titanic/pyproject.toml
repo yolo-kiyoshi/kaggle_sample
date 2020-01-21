@@ -15,6 +15,8 @@ seaborn = "*"
 japanize-matplotlib = "*"
 xgboost = "^0.90"
 optuna = "^1.0.0"
+lightgbm = "^2.3.1"
+Boruta = "^0.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
